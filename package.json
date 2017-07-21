@@ -4,7 +4,7 @@
   "description": "Redux and React",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --inline --hot",
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +28,9 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.3.0",
+    "redux-thunk": "^2.2.0",
     "webpack": "^3.3.0"
   },
   "devDependencies": {

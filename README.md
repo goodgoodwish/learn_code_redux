@@ -26,27 +26,35 @@ webpack
 
 webpack watch
 
+#npm install --save express
+#npm install --save pug
 
-npm install --save express
-npm install --save pug
-
-* step 2, Install Babel, webpack, React and Redux,
-
-cd public, 
-
-npm install --save webpack
-# REM # npm install --save babel
+* step n, Install Babel, webpack, React and Redux,
 
 npm install --save babel-cli babel-core
+npm install --save babel-loader 
+npm install --save babel-preset-es2015 babel-preset-react babel-preset-stage-0
+
+npm install --save-dev babel-plugin-react-html-attrs
+npm install --save-dev babel-plugin-add-module-exports
+npm install --save-dev babel-plugin-react-html-attrs
+npm install --save-dev babel-plugin-transform-class-properties
+npm install --save-dev babel-plugin-transform-decorators-legacy
+
 npm install --save react react-dom
 npm install --save redux react-redux
 npm install --save-dev redux-devtools
 
-* step 3, Configuring Webpack
+npm install --save-dev webpack-dev-server
+#npm uninstall --save-dev webpack-dev-server
 
 npm uninstall --save babel
 
-npm install --save babel-loader 
-npm install --save babel-preset-es2015 babel-preset-react
 
 
+* Install Redux
+
+npm install --save axios
+npm install --save redux-logger
+npm install --save redux-promise-middleware
+npm install --save redux-thunk

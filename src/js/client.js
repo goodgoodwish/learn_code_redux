@@ -1,7 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { createStore } from "redux";
 
-import Layout from "./components/Layout";
+const reducer = (initialState=0, action) => {
+  if (action.type === "INC") {
+    return initialState + 1;
+  } else if (action.type === "DEC") {
+    return initialState - 1;
+  }
+  return initialState;
+}
 
-const app = document.getElementById('app');
-ReactDOM.render(<Layout/>, app);
+const store = createStore(reducer, 1)
+
+store.subscribe(() => {
+  console.log("store changed", store.getState());
+})
+
+store.dispatch({type: "INC"})
+store.dispatch({type: "INC"})
+store.dispatch({type: "INC"})
+store.dispatch({type: "DEC"})
+store.dispatch({type: "DEC"})
+store.dispatch({type: "DEC"})
