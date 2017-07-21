@@ -22,7 +22,10 @@ webpack
 set NODE_ENV=production
 webpack
 
-* step n,
+* step n, Install React,
+
+webpack watch
+
 
 npm install --save express
 npm install --save pug
