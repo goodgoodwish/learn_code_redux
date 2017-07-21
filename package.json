@@ -1,0 +1,22 @@
+{
+  "name": "learn_code_redux",
+  "version": "1.0.0",
+  "description": "Redux and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodgoodwish/learn_code_redux.git"
+  },
+  "author": "Charlie Yi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goodgoodwish/learn_code_redux/issues"
+  },
+  "homepage": "https://github.com/goodgoodwish/learn_code_redux#readme",
+  "dependencies": {
+    "webpack": "^3.3.0"
+  }
+}
