@@ -2,6 +2,14 @@
 
 Build a stock investment application, using React Redux Node.js Express and MongoDB.
 
+### To run it in Dev mode: 
+`npm run dev`
+
+### To see it in Browser: 
+`http://localhost:8081/`
+
+Remember open the console to see the application logs.
+
 Installation
 --
 
@@ -13,20 +21,13 @@ npm init
 npm install --save webpack
 npm install --global webpack
 
-webpack
-
 // DOS, minimize JavaScript file,
 set NODE_ENV=production
 webpack
-
-* step n, Install React,
-
 webpack watch
 
-#npm install --save express
-#npm install --save pug
 
-* step n, Install Babel, webpack, React and Redux,
+* step n, Install Babel, webpack-dev, React and Redux,
 
 npm install --save babel-cli babel-core
 npm install --save babel-loader 
@@ -43,19 +44,21 @@ npm install --save redux react-redux
 npm install --save-dev redux-devtools
 
 npm install --save-dev webpack-dev-server
+
 //npm uninstall --save-dev webpack-dev-server
+//npm uninstall --save babel
 
-npm uninstall --save babel
-
-
-
-* Install Redux
+* Install Redux middleware, and axios (like Fetch API)
 
 npm install --save axios
 npm install --save redux-logger
 npm install --save redux-promise-middleware
 npm install --save redux-thunk
 
+* step n, Install Express,
+
+//npm install --save express
+//npm install --save pug
 
 
 # Reference,
