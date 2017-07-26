@@ -1,9 +1,6 @@
-"# learn_code_redux" 
+# learn_code_redux
 
-React JS Tutorials, from LearnCode
-
-https://www.youtube.com/playlist?list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b
-
+Build a stock investment application, using React Redux Node.js Express and MongoDB.
 
 Installation
 --
@@ -18,7 +15,7 @@ npm install --global webpack
 
 webpack
 
-# DOS, minimize JavaScript file,
+// DOS, minimize JavaScript file,
 set NODE_ENV=production
 webpack
 
@@ -46,7 +43,7 @@ npm install --save redux react-redux
 npm install --save-dev redux-devtools
 
 npm install --save-dev webpack-dev-server
-#npm uninstall --save-dev webpack-dev-server
+//npm uninstall --save-dev webpack-dev-server
 
 npm uninstall --save babel
 
@@ -58,3 +55,12 @@ npm install --save axios
 npm install --save redux-logger
 npm install --save redux-promise-middleware
 npm install --save redux-thunk
+
+
+
+# Reference,
+
+React JS Tutorials, from LearnCode
+
+https://www.youtube.com/playlist?list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b
+
