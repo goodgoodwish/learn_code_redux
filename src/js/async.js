@@ -65,7 +65,7 @@ const store = createStore(reducers, {}, middleware);
 
 export function doSomething() {
 
-	console.log('Demo async dispatch, and Redux promise.');
+	console.log('Demo async dispatch, Redux thunk and promise.');
 	
   // promise() for Redux, return action _PENDING _FULFILLED _REJECTED,
   store.dispatch({
