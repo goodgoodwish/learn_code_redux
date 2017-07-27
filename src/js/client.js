@@ -74,14 +74,21 @@ store.subscribe(() => {
   console.log("store changed", store.getState());
 })
 
-store.dispatch({type: "CHANGE_NAME", payload: ''})
-store.dispatch({type: "CHANGE_NAME", payload: 'Juliet'})
-store.dispatch({type: "CHANGE_AGE", payload: 18})
-//
-//store.dispatch({type: "ADD_TWEET", payload: ''})
-//store.dispatch({type: "ADD_TWEET", payload: 'Good wish'})
-//store.dispatch({type: "ADD_TWEET", payload: 'Mindful listening'})
+function doSomething () {
 
-//store.dispatch({type: "INC", payload: 1})
-//store.dispatch({type: "DEC", payload: 1})
-//store.dispatch({type: "E", payload: 1})
+	console.log('Demo middleware, such as logger(), error()')
+	
+  store.dispatch({type: "CHANGE_NAME", payload: ''})
+  store.dispatch({type: "CHANGE_NAME", payload: 'Juliet'})
+  store.dispatch({type: "CHANGE_AGE", payload: 18})
+  //
+  //store.dispatch({type: "ADD_TWEET", payload: ''})
+  //store.dispatch({type: "ADD_TWEET", payload: 'Good wish'})
+  //store.dispatch({type: "ADD_TWEET", payload: 'Mindful listening'})
+  
+  //store.dispatch({type: "INC", payload: 1})
+  //store.dispatch({type: "DEC", payload: 1})
+  //store.dispatch({type: "E", payload: 1})
+}
+
+export {doSomething};

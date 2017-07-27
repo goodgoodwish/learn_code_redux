@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/goodgoodwish/learn_code_redux#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
