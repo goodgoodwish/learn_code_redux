@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 
-import { fetchUser } from "../action/userAction"
+import { fetchUser, fetchLocalUser } from "../action/userAction"
 import { fetchTweet, clearTweet } from "../action/tweetAction"
 
 import Footer from "./Footer"
@@ -28,6 +28,7 @@ export default class Layout extends React.Component {
   }
 
   componentWillMount() {
+    this.props.dispatch(fetchLocalUser());
     this.props.dispatch(fetchUser());
   }
 

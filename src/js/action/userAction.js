@@ -1,14 +1,25 @@
 import axios from "axios"
 
-export function fetchUserFake() {
+export function fetchLocalUser() {
 	// faked async AJAX action,
-	return {
-		type: 'FETCH_USER_FULFILLED',
-		payload: {
-			name: "Yi",
-			age: 42
-		}
-	}
+	//return {
+	//	type: 'FETCH_USER_FULFILLED',
+	//	payload: {
+	//		name: "Yi",
+	//		age: 42
+	//	}
+	//}
+
+  // Real async AJAX action,
+  return function(dispatch) {
+    // promise() for Redux, return action _PENDING _FULFILLED _REJECTED,
+    dispatch({
+      type: "FETCH_LOCAL_USER",
+      payload: axios.get("/user"),
+    });
+
+  }
+
 }
 
 export function fetchUser() {

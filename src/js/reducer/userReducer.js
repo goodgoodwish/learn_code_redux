@@ -32,6 +32,9 @@ export default function reducer(state = initState, action) {
 		case 'FETCH_USER_ERROR':
 			state = {...state, fetching: false, error: action.payload};
 			break;
+		case 'FETCH_LOCAL_USER_FULFILLED':
+			state = {...state, fetching: false, fetched: true, user: action.payload.data.user};
+			break;
 		default:
 			// statements_def
 			break;
