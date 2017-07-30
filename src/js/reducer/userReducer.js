@@ -23,11 +23,11 @@ export default function reducer(state = initState, action) {
 				user: {...state.user, age: action.payload}
 			};
 			break;
-		case 'FETCH_USER_START':
+		case 'FETCH_USER_PENDING':
 			state = {...state, fetching: true};
 			break;
 		case 'FETCH_USER_FULFILLED':
-			state = {...state, fetching: false, fetched: true, user: action.payload.data[1]};
+			state = {...state, fetching: false, fetched: true, user: action.payload.data.user};
 			break;
 		case 'FETCH_USER_ERROR':
 			state = {...state, fetching: false, error: action.payload};

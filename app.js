@@ -19,8 +19,23 @@ const oneUser = {
 	error: null,
 }
 
+const stocks = [{
+  stockName: 'TSLA',
+  price: 320.99,
+  qty: 58
+}, {
+  stockName: 'AMZN',
+  price: 920.99,
+  qty: 10
+}, ];
+
 app.get('/user', function (req, res) {
 	res.json(oneUser);
+});
+
+app.get('/stock', function (req, res) {
+	res.json(stocks);
+	console.log('retrun stocks.')
 });
 
 app.listen(3000, function () {

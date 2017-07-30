@@ -2,11 +2,17 @@
 
 Build a stock investment application, using React Redux Node.js Express and MongoDB.
 
-### To run it in Dev mode: 
+### To run it in Dev mode, Front end React and Redux, no backend: 
 `npm run dev`
 
-### To see it in Browser: 
+To see it in Browser: 
 `http://localhost:8081/`
+
+### To run it with backend Node.js Express server: 
+`npm run web`
+
+To see it in Browser: 
+`http://localhost:3000/`
 
 Remember open the console to see the application logs.
 
@@ -21,7 +27,7 @@ npm init
 npm install --save webpack
 npm install --global webpack
 
-// DOS, minimize JavaScript file,
+// Pack for production code, minimize JavaScript file,
 set NODE_ENV=production
 webpack
 webpack watch

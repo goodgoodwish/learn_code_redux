@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 
 import { fetchUser, fetchLocalUser } from "../action/userAction"
-import { fetchTweet, clearTweet } from "../action/tweetAction"
+import { fetchStock, addStock, clearStock } from "../action/stockAction"
 
 import Footer from "./Footer"
 import Header from "./Header"
@@ -10,8 +10,9 @@ import Header from "./Header"
 @connect((store) => {
   return {
     user: store.userDS.user,
-    userFetched: store.userDS.fetched,
-    tweets: store.tweetsDS.tweets,
+    stockFetched: store.stockDS.fetched,
+    stockFetching: store.stockDS.fetching,
+    stocks: store.stockDS.stocks,
   }
 })
 
@@ -28,30 +29,48 @@ export default class Layout extends React.Component {
   }
 
   componentWillMount() {
+    //this.props.dispatch(fetchStock());
     this.props.dispatch(fetchLocalUser());
-    this.props.dispatch(fetchUser());
-  }
-
-  fetchTweet() {
-    this.props.dispatch(fetchTweet());
     console.log(this.props);
   }
 
-  clearTweet() {
-    this.props.dispatch(clearTweet());
-    console.log(this.props);
+  fetchStock() {
+    this.props.dispatch(fetchStock());
+  }
+
+  clearStock() {
+    this.props.dispatch(clearStock());
+  }
+
+  addStock() {
+    this.props.dispatch(addStock());
   }
 
   render() {
-    console.log(this.props);
+    console.log("Init:", this.props);
 
-    const listTweet = this.props.tweets.map(tweet => <li key={tweet.id}>{tweet.text}</li>);
+    // Destructuring assignment,
+    const { user, stocks } = this.props;
+    console.log('Stocks: ', stocks);
+
+    let listStock = <li>...</li>;
+    if (!this.props.stockFetched) {
+      listStock = <li key="1" >Fetching ...</li>;
+      console.log("Li: ", listStock);
+    } else {
+      //listStock = this.props.stocks.map(
+      listStock = stocks.map(
+        val => <li key={val.stockName}>{val.stockName + ', ' + val.price + ', ' + val.qty} </li>
+      );
+    }
+
     return (
       <div>
-        <h1>Welcome user: {this.props.user.name}</h1>
-        <button onClick={this.fetchTweet.bind(this)}>Load tweet</button>
-        <button onClick={this.clearTweet.bind(this)}>Clear tweet</button>
-        <ul>{listTweet}</ul>
+        <h4> User: {this.props.user.name} , User (Destructuring assignment): {user.name}</h4>
+        <button onClick={this.fetchStock.bind(this)}>fetchStock</button>
+        <button onClick={this.addStock.bind(this)}>addStock</button>
+        <button onClick={this.clearStock.bind(this)}>clearStock</button>
+        <ul>{listStock}</ul>
 
 
         <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
