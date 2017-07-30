@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 
 import { fetchUser, fetchLocalUser } from "../action/userAction"
-import { fetchStock, addStock, clearStock } from "../action/stockAction"
+import { fetchStock, addStock, updateStock, deleteStock, clearStock } from "../action/stockAction"
 
 import Footer from "./Footer"
 import Header from "./Header"
@@ -45,6 +45,12 @@ export default class Layout extends React.Component {
   addStock() {
     this.props.dispatch(addStock());
   }
+  updateStock() {
+    this.props.dispatch(updateStock());
+  }
+  deleteStock() {
+    this.props.dispatch(deleteStock());
+  }
 
   render() {
     console.log("Init:", this.props);
@@ -69,6 +75,8 @@ export default class Layout extends React.Component {
         <h4> User: {this.props.user.name} , User (Destructuring assignment): {user.name}</h4>
         <button onClick={this.fetchStock.bind(this)}>fetchStock</button>
         <button onClick={this.addStock.bind(this)}>addStock</button>
+        <button onClick={this.updateStock.bind(this)}>updateStock</button>
+        <button onClick={this.deleteStock.bind(this)}>deleteStock</button>
         <button onClick={this.clearStock.bind(this)}>clearStock</button>
         <ul>{listStock}</ul>
 

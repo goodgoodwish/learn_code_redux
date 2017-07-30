@@ -46,6 +46,30 @@ export function addStock(name, price, qty) {
 	}
 }
 
+export function deleteStock(name) {
+	return {
+		type: 'DELETE_STOCK_FULFILLED',
+		payload: {
+      data: {
+        stockName: 'COST',
+      }
+    }
+	}
+}
+
+export function updateStock(name, price, qty) {
+	return {
+		type: 'UPDATE_STOCK_FULFILLED',
+		payload: {
+      data: {
+        stockName: 'COST',
+        price: 10,
+        qty: 7,
+      }
+    }
+	}
+}
+
 export function setStockName(name) {
 	return {
 		type: 'CHANGE_STOCK_NAME',
