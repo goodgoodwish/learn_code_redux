@@ -67,12 +67,13 @@ export function doSomething() {
 
 	console.log('Demo async dispatch, Redux thunk and promise.');
 	
-  // promise() for Redux, return action _PENDING _FULFILLED _REJECTED,
+  // promise() async for Redux, return action _PENDING _FULFILLED _REJECTED,
   store.dispatch({
     type: "YI",
     payload: axios.get("http://rest.learncodeaaa.academy/api/wstern/users"),
   });
 
+  // Normal async,
   store.dispatch((dispatch) => {
     dispatch({
       type: 'FETCH_USERS_START'

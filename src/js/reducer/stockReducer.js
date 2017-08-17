@@ -2,8 +2,9 @@ const initState = {
 	fetched: false,
 	fetching: false,
   stocks: [{
-    //price: 12.11,
-    qty: 420
+    stockName: 'AAA',
+    price: 0,
+    qty: 0,
   }]
 };
 export default function reducer(state = initState, action) {
@@ -27,6 +28,13 @@ export default function reducer(state = initState, action) {
 			};
 			break;
 		case 'ADD_STOCK_FULFILLED':
+			stockIdx = state.stocks.findIndex(function (element, index) {
+				return (element.stockName === action.payload.data.stockName);
+			});
+			if (stockIdx >= 0) {
+				console.log('Stock', action.payload.data.stockName, ' Exists');
+				break;
+			}
 			state = {...state, fetching: false, fetched: true, 
 				stocks: [...state.stocks, action.payload.data]
 			};

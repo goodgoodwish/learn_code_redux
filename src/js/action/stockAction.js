@@ -38,9 +38,9 @@ export function addStock(name, price, qty) {
 		type: 'ADD_STOCK_FULFILLED',
 		payload: {
       data: {
-        stockName: 'COST',
-        price: 168.29,
-        qty: 70
+        stockName: name,
+        price: Number(price),
+        qty: Number(qty),
       }
     }
 	}
@@ -69,6 +69,21 @@ export function updateStock(name, price, qty) {
     }
 	}
 }
+
+export function updateStockPrice(name, price) {
+
+  let stockUrl = 'http://download.finance.yahoo.com/d/quotes.csv?s=COST&f=a';
+  //stockUrl = 'http://rest.learncode.academy/api/test123/tweets';
+  // Promise(), and async AJAX action,
+  return function(dispatch) {
+    // promise() for Redux, return action _PENDING _FULFILLED _REJECTED,
+    dispatch({
+      type: "UPDATE_STOCK_PRICE",
+      payload: axios.get(stockUrl),
+    });
+  }
+}
+
 
 export function setStockName(name) {
 	return {
