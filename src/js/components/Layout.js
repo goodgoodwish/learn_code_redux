@@ -31,15 +31,15 @@ export default class Layout extends React.Component {
     this.setState({title: title});
   }
 
-  changeStockName(e) {
-    this.setState({stockName: e.target.value});
-  }
-  changePrice(e) {
-    const price = e.target.value;
-    this.setState({price: price});
-  }
-  changeQty(e) {
-    this.setState({qty: e.target.value});
+  changeInput(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const elementName = target.name;
+
+    this.setState({
+      [elementName]: value,
+    })
+    console.log('changeInput: : ', elementName, value);
   }
 
   componentWillMount() {
@@ -95,15 +95,15 @@ export default class Layout extends React.Component {
         <form>
           <lable>
             Name:
-            <input value={this.state.stockName} onChange={this.changeStockName.bind(this)} />
+            <input name="stockName" value={this.state.stockName} onChange={this.changeInput.bind(this)} />
           </lable>
           <lable>
             Quantity:
-            <input value={this.state.qty} onChange={this.changeQty.bind(this)} />
+            <input name="qty" value={this.state.qty} onChange={this.changeInput.bind(this)} />
           </lable>
           <lable>
             Price:
-            <input value={this.state.price} onChange={this.changePrice.bind(this)} />
+            <input name="price" value={this.state.price} onChange={this.changeInput.bind(this)} />
           </lable>
         </form><hr />
 
